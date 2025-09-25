@@ -1,10 +1,11 @@
 import "./App.css";
+import Navbar from "./components/organism/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <div className="flex bg-amber-300 items-center text-3xl">
-        Hey, Welcome!
+      <div className="w-screen h-screen bg-[#F0F8E6]">
+        <Navbar />
       </div>
     </>
   );
