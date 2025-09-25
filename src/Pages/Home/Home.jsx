@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getMealsByAllIngredients } from "../../api/getRecipe";
 
 /**
  * Home Component
@@ -13,6 +14,23 @@ function Home() {
   const [ingredient, setIngredient] = useState("");
   const suggestions = ["chicken", "rice", "potato", "egg"];
 
+  async function searchMeal() {
+    if (ingredient == "") {
+      alert("Please enter any ingredient!");
+      return;
+    }
+
+    const ingredients = ingredient.split(" ");
+
+    try {
+      const result = await getMealsByAllIngredients(ingredients);
+      console.log("result: ", result);
+      setIngredient("");
+    } catch (error) {
+      console.log("error while fetching meal: ", error);
+    }
+  }
+
   return (
     <main className="w-full min-h-[calc(100vh-70px)] bg-[#F1F8EC] flex flex-col items-center justify-center px-4 py-2">
       {/* Headline */}
@@ -26,20 +44,23 @@ function Home() {
       </p>
 
       {/* Search Section */}
-      <div className="mt-8 flex flex-col md:flex-row items-center gap-3">
+      <div className="mt-8 flex flex-col  items-center gap-3">
         <input
           type="text"
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
           placeholder="Enter ingredient(s)..."
-          className="w-72 md:w-96 px-4 py-3 border rounded-md text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-72 md:w-140 px-4 py-3 border rounded-md text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-green-400"
         />
-        <div className="flex  gap-2">
-          <button className="px-6 py-3 bg-brand-green text-white font-semibold rounded-md text-base md:text-lg hover:bg-green-700 transition-colors">
+        <div className="flex gap-2">
+          <button
+            className="px-6 py-3 bg-brand-green text-white font-semibold rounded-md text-base md:text-lg hover:bg-green-700 transition-colors"
+            onClick={searchMeal}
+          >
             Search
           </button>
           <button className="px-6 py-3 border border-brand-green text-brand-green font-semibold rounded-md text-base md:text-lg hover:bg-brand-green hover:text-white cursor-pointer transition-colors">
-            SurpriseMe
+            Surprise Me!
           </button>
         </div>
       </div>
