@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getMealsByAllIngredients } from "../../api/getRecipe";
+import { Link, useNavigate } from "react-router-dom";
 
 /**
  * Home Component
@@ -14,6 +15,8 @@ function Home() {
   const [ingredient, setIngredient] = useState("");
   const suggestions = ["chicken", "rice", "potato", "egg"];
 
+  const navigate = useNavigate();
+
   async function searchMeal() {
     if (ingredient == "") {
       alert("Please enter any ingredient!");
@@ -24,12 +27,18 @@ function Home() {
 
     try {
       const result = await getMealsByAllIngredients(ingredients);
-      console.log("result: ", result);
       setIngredient("");
     } catch (error) {
       console.log("error while fetching meal: ", error);
     }
   }
+
+  const handleSearch = () => {
+    if (!ingredient.trim()) return;
+    // navigate to results page with query as a URL param
+    navigate(`/results/${encodeURIComponent(ingredient)}`);
+    setIngredient("");
+  };
 
   return (
     <main className="w-full min-h-[calc(100vh-70px)] bg-[#F1F8EC] flex flex-col items-center justify-center px-4 py-2">
@@ -49,13 +58,13 @@ function Home() {
           type="text"
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
-          placeholder="Enter ingredient(s)..."
+          placeholder="Enter ingredient(s). Ex:- 'chicken' or 'chicken rice milk'"
           className="w-72 md:w-140 px-4 py-3 border rounded-md text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-green-400"
         />
         <div className="flex gap-2">
           <button
-            className="px-6 py-3 bg-brand-green text-white font-semibold rounded-md text-base md:text-lg hover:bg-green-700 transition-colors"
-            onClick={searchMeal}
+            className="px-6 py-3 bg-brand-green text-white font-semibold rounded-md text-base md:text-lg hover:bg-green-700 transition-colors cursor-pointer"
+            onClick={handleSearch}
           >
             Search
           </button>
@@ -68,12 +77,11 @@ function Home() {
       {/* Suggested Ingredients */}
       <div className="mt-8 flex flex-wrap gap-4 justify-center">
         {suggestions.map((item) => (
-          <span
-            key={item}
-            className="px-5 py-2 bg-yellow-300 rounded-full text-gray-800 font-medium cursor-pointer text-base md:text-lg hover:bg-yellow-400 transition-colors"
-          >
-            {item}
-          </span>
+          <Link to={`/dfd`} key={item}>
+            <span className="px-5 py-2 bg-yellow-300 rounded-full text-gray-800 font-medium cursor-pointer text-base md:text-lg hover:bg-yellow-400 transition-colors">
+              {item}
+            </span>
+          </Link>
         ))}
       </div>
 
