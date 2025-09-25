@@ -2,11 +2,9 @@
 
 
 @theme {
-  --color-recipe-bg: #CDE0C4;
-  --color-recipe-primary: #3B82F6;
-  --color-recipe-accent: #60A5FA;
-  --color-recipe-text: #111827;
-  --color-recipe-subtext: #6B7280;
-  --color-recipe-border: #E5E7EB;
-  --color-recipe-white: #FFFFFF;
+    --color-brand-background: #F8FBF6;
+    --color-brand-green: #34A853;
+    --color-brand-green-light: #E6F4EA;
+    --color-brand-yellow: #FFD180;
+    --color-brand-text: #3D3A3A;
 }
