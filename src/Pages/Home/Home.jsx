@@ -1,0 +1,67 @@
+import { useState } from "react";
+
+/**
+ * Home Component
+ *
+ * Displays the main landing page with:
+ * - Headline and subtext
+ * - Search input and buttons (Search + SurpriseMe)
+ * - Suggested ingredient tags
+ * - Footer tagline
+ */
+function Home() {
+  const [ingredient, setIngredient] = useState("");
+  const suggestions = ["chicken", "rice", "potato", "egg"];
+
+  return (
+    <main className="w-full min-h-[calc(100vh-70px)] bg-[#F1F8EC] flex flex-col items-center justify-center px-4 py-2">
+      {/* Headline */}
+      <h2 className="text-3xl md:text-5xl font-bold text-center text-[#4A2E2E] leading-snug">
+        See what delicious meals <br /> you can cook today 🍴
+      </h2>
+
+      {/* Subtext */}
+      <p className="mt-5 text-lg md:text-xl text-center text-gray-700 max-w-2xl">
+        Enter ingredients you already have and discover recipes instantly.
+      </p>
+
+      {/* Search Section */}
+      <div className="mt-8 flex flex-col md:flex-row items-center gap-3">
+        <input
+          type="text"
+          value={ingredient}
+          onChange={(e) => setIngredient(e.target.value)}
+          placeholder="Enter ingredient(s)..."
+          className="w-72 md:w-96 px-4 py-3 border rounded-md text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+        />
+        <div className="flex  gap-2">
+          <button className="px-6 py-3 bg-brand-green text-white font-semibold rounded-md text-base md:text-lg hover:bg-green-700 transition-colors">
+            Search
+          </button>
+          <button className="px-6 py-3 border border-brand-green text-brand-green font-semibold rounded-md text-base md:text-lg hover:bg-brand-green hover:text-white cursor-pointer transition-colors">
+            SurpriseMe
+          </button>
+        </div>
+      </div>
+
+      {/* Suggested Ingredients */}
+      <div className="mt-8 flex flex-wrap gap-4 justify-center">
+        {suggestions.map((item) => (
+          <span
+            key={item}
+            className="px-5 py-2 bg-yellow-300 rounded-full text-gray-800 font-medium cursor-pointer text-base md:text-lg hover:bg-yellow-400 transition-colors"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+
+      {/* Footer Text */}
+      <p className="mt-10 text-lg md:text-xl text-gray-800 font-medium text-center">
+        Cooking made simple. Fast, tasty, and stress-free.
+      </p>
+    </main>
+  );
+}
+
+export default Home;

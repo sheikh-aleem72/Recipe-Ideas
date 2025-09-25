@@ -1,12 +1,10 @@
 import "./App.css";
-import Header from "./components/organism/Header/Header";
+import { AppRoutes } from "./routes";
 
 function App() {
   return (
     <>
-      <div className="w-screen h-screen bg-[#F0F8E6]">
-        <Header />
-      </div>
+      <AppRoutes />
     </>
   );
 }
