@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import RecipeCard from "../../components/molecules/RecipeCard/RecipeCard";
 
 function SavedRecipes() {
@@ -19,11 +18,13 @@ function SavedRecipes() {
 
       {/* No saved recipes */}
       {saved.length === 0 ? (
-        <p className="text-gray-600">You haven't saved any recipes yet.</p>
+        <p className="text-gray-600 text-xl">
+          You haven't saved any recipes yet.
+        </p>
       ) : (
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 relative">
           {saved.map((recipe) => (
-            <RecipeCard recipe={recipe} />
+            <RecipeCard recipe={recipe} key={recipe?.idMeal} />
           ))}
         </div>
       )}
