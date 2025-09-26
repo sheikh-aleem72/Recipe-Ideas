@@ -3,6 +3,7 @@ import Layout from "./components/organism/Layout/Layout";
 import Home from "./Pages/Home/Home";
 import Result from "./Pages/Result/Result";
 import RecipeDetails from "./Pages/RecipeDetails/RecipeDetails";
+import SavedRecipes from "./Pages/SavedRecipes/SavedRecipes";
 
 export const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ export const AppRoutes = () => {
           <Route path="/results/:ingredient" element={<Result />} />
           <Route path="/:idMeal" element={<RecipeDetails />} />
           <Route path="/random" element={<RecipeDetails />} />
+          <Route path="/saved" element={<SavedRecipes />} />
         </Route>
       </Routes>
     </>

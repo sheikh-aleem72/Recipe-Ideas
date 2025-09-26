@@ -34,7 +34,7 @@ function Result() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-background  text-gray-800">
+    <div className="min-h-[calc(100vh-70px)] bg-brand-background  text-gray-800">
       {/* Header */}
 
       {recipes && recipes.length > 0 ? (
