@@ -4,11 +4,11 @@ import logo from "../../../assets/logo.png";
 
 function Header() {
   return (
-    <header className="w-full md:max-w-8xl mx-auto px-6 py-5 border-b-2 border-gray-400">
+    <header className="w-full md:max-w-8xl mx-auto px-2 md:px-6 py-2 md:py-5 border-b-2 border-gray-400">
       <nav className="flex justify-between items-center">
         <Link
           to="/"
-          className="flex items-center gap-2 text-brand-text font-semibold text-xl"
+          className="flex items-center gap-2 text-brand-text font-semibold md:text-xl"
         >
           {/* <LuLeaf className="text-brand-green" size={25} /> */}
           <img src={logo} className="w-8 h-8" />
@@ -16,10 +16,10 @@ function Header() {
         </Link>
         <Link
           to="/saved"
-          className="flex items-center gap-2 text-brand-text font-semibold text-xl"
+          className="flex items-center gap-2 text-brand-text font-semibold md:text-xl"
         >
           <LuStar className="text-yellow-500" size={22} />
-          <span>Saved Recipes</span>
+          <span className="hidden md:flex">Saved Recipes</span>
         </Link>
       </nav>
     </header>
