@@ -17,22 +17,6 @@ function Home() {
 
   const navigate = useNavigate();
 
-  async function searchMeal() {
-    if (ingredient == "") {
-      alert("Please enter any ingredient!");
-      return;
-    }
-
-    const ingredients = ingredient.split(" ");
-
-    try {
-      const result = await getMealsByAllIngredients(ingredients);
-      setIngredient("");
-    } catch (error) {
-      console.log("error while fetching meal: ", error);
-    }
-  }
-
   const handleSearch = () => {
     if (!ingredient.trim()) return;
     // navigate to results page with query as a URL param
@@ -68,7 +52,10 @@ function Home() {
           >
             Search
           </button>
-          <button className="px-6 py-3 border border-brand-green text-brand-green font-semibold rounded-md text-base md:text-lg hover:bg-brand-green hover:text-white cursor-pointer transition-colors">
+          <button
+            className="px-6 py-3 border border-brand-green text-brand-green font-semibold rounded-md text-base md:text-lg hover:bg-brand-green hover:text-white cursor-pointer transition-colors"
+            onClick={() => navigate("/random")}
+          >
             Surprise Me!
           </button>
         </div>

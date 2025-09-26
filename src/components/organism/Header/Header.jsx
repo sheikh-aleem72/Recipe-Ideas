@@ -5,7 +5,7 @@ function Header() {
     <header className="w-full max-w-8xl mx-auto px-6 py-5 border-b-2 border-gray-400">
       <nav className="flex justify-between items-center">
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2 text-brand-text font-semibold text-xl"
         >
           <LuLeaf className="text-brand-green" size={25} />
