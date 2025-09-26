@@ -1,5 +1,6 @@
 import { LuLeaf, LuStar } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 
 function Header() {
   return (
@@ -9,7 +10,8 @@ function Header() {
           to="/"
           className="flex items-center gap-2 text-brand-text font-semibold text-xl"
         >
-          <LuLeaf className="text-brand-green" size={25} />
+          {/* <LuLeaf className="text-brand-green" size={25} /> */}
+          <img src={logo} className="w-8 h-8" />
           <span>Recipe Ideas</span>
         </Link>
         <Link

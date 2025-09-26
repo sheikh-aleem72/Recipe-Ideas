@@ -13,7 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
  */
 function Home() {
   const [ingredient, setIngredient] = useState("");
-  const suggestions = ["chicken", "rice", "potato", "egg"];
+  const suggestions = ["chicken", "rice", "beef", "egg"];
 
   const navigate = useNavigate();
 
@@ -73,7 +73,7 @@ function Home() {
             }}
             key={item}
           >
-            <span className="px-5 py-2 bg-yellow-300 rounded-full text-gray-800 font-medium cursor-pointer text-base md:text-lg hover:bg-yellow-400 transition-colors">
+            <span className="px-5 py-2 bg-yellow-600 rounded-full text-white font-medium cursor-pointer text-base md:text-lg hover:bg-yellow-400 transition-colors">
               {item}
             </span>
           </button>
