@@ -17,8 +17,11 @@ function Home() {
 
   const navigate = useNavigate();
 
-  const handleSearch = () => {
+  const handleSearch = (param) => {
     if (!ingredient.trim()) return;
+    if (param) {
+      setIngredient(param);
+    }
     // navigate to results page with query as a URL param
     navigate(`/results/${encodeURIComponent(ingredient)}`);
     setIngredient("");
@@ -64,11 +67,16 @@ function Home() {
       {/* Suggested Ingredients */}
       <div className="mt-8 flex flex-wrap gap-4 justify-center">
         {suggestions.map((item) => (
-          <Link to={`/dfd`} key={item}>
+          <button
+            onClick={() => {
+              setIngredient(item);
+            }}
+            key={item}
+          >
             <span className="px-5 py-2 bg-yellow-300 rounded-full text-gray-800 font-medium cursor-pointer text-base md:text-lg hover:bg-yellow-400 transition-colors">
               {item}
             </span>
-          </Link>
+          </button>
         ))}
       </div>
 

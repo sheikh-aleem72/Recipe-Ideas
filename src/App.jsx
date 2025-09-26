@@ -1,10 +1,13 @@
 import "./App.css";
+import CustomErrorBoundary from "./components/molecules/CustomErrorBoundary/CustomErrorBoundary";
 import { AppRoutes } from "./routes";
 
 function App() {
   return (
     <>
-      <AppRoutes />
+      <CustomErrorBoundary>
+        <AppRoutes />
+      </CustomErrorBoundary>
     </>
   );
 }

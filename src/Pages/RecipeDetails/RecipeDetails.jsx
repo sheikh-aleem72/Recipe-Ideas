@@ -24,6 +24,7 @@ function RecipeDetails() {
         }
       } catch (error) {
         console.log("Error while fetching details: ", error);
+        setRecipe([]);
       }
     }
 

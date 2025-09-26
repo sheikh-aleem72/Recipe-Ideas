@@ -16,7 +16,6 @@ function Result() {
 
       try {
         const result = await getMealsByAllIngredients(ingredients);
-        console.log("results: ", result);
         setRecipes(result);
       } catch (error) {
         console.log("error while fetching meal: ", error);

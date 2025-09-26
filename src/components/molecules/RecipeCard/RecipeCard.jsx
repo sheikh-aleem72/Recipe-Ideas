@@ -41,7 +41,6 @@ function RecipeCard({ recipe }) {
         setIsSaved(true);
       }
     }
-    console.log("Is saved", isSaved);
   };
   return (
     <Link
