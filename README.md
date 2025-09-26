@@ -1,16 +1,115 @@
-# React + Vite
+# 🍲 Recipe Ideas App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive web application that helps users discover recipes based on ingredients.  
+Built with **React**, **Vite**, and **Tailwind CSS**, the app uses the [TheMealDB API](https://www.themealdb.com/api.php) to fetch recipes and display details such as ingredients, cooking instructions, and video tutorials.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- 🔎 **Search Recipes** by one or more ingredients
+- 📖 **View Recipe Details** including:
+  - Ingredients with images and measures
+  - Step-by-step cooking instructions
+  - YouTube video tutorials
+- 🎲 **Random Recipe Generator** for quick inspiration
+- ⭐ **Save Recipes** locally to view later (using `localStorage`)
+- 🖼️ **Ingredient Images** displayed alongside their measures
+- 📱 Fully **responsive UI** with clean design (desktop + mobile)
+- ⚠️ Graceful **error handling** (no results / API error)
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React + Vite** → Fast and modern frontend setup
+- **Tailwind CSS** → Styling and responsive design
+- **Axios** → API calls
+- **LocalStorage** → Save and persist user’s favorite recipes
+- **TheMealDB API** → Open recipe database
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/sheikh-aleem72/Recipe-Ideas.git
+cd recipe-ideas-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Variables
+
+Create a `.env` file in the root and add:
+
+```env
+VITE_API_URL=https://www.themealdb.com/api/json/v1/1
+```
+
+### 4. Run the project
+
+```bash
+npm run dev
+```
+
+The app will be available at `https://recipe-ideas-chi.vercel.app/`.
+
+---
+
+## 🌍 Deployment
+
+You can deploy the app for free on:
+
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+- [CodeSandbox](https://codesandbox.io/)
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home page
+
+Home page with welcome message and searching elements
+![Home Page](./src/assets/screenshots/home-page.jpg)
+
+### 🔎 Search Results
+
+Displays recipes found for a given ingredient.
+![Search Results](./src/assets/screenshots/result-page.jpg)
+
+### 📖 Recipe Details
+
+Shows ingredients with images, measures, instructions, and video.
+![Recipe Details](./src/assets/screenshots/detail-page.jpg)
+
+### ⭐ Saved Recipes
+
+Allows users to save and view favorite recipes.
+![Saved Recipes](./src/assets/screenshots/saved-page.jpg)
+
+---
+
+## 🔮 Future Improvements
+
+- 📂 **Filter recipes by category or area** (e.g., Italian, Mexican, Dessert)
+- 🌍 **Show cuisine flags** for areas (via external flag API)
+- 🧾 **Advanced search** with multiple ingredients (AND logic)
+- 📝 **User notes** for each saved recipe
+- 🌙 **Dark mode** support
+
+---
+
+## 🧑‍💻 Author
+
+Developed by **Shekh Aalim**
+Built with ❤️ using React, Vite, and Tailwind CSS.
+
+---
